@@ -1,0 +1,7 @@
+core = "7.x"
+description = "Support module for a the BTM Features Slideshow Simple module with no controls, overlays or links"
+name = "BTM Support Slideshow Simple"
+package = "Features"
+project = "btm_support_hp_slideshow_simple"
+dependencies[] = "jquery_plugin"
+version = "7.x-1.0"

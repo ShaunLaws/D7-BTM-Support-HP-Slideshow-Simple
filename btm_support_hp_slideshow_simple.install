@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the btm_support_hp_slideshow_simple module.
+ */
+
+function btm_support_hp_slideshow_simple_install() {
+  drupal_set_message(st("The BTM Support HP Slideshow Simple module has been successfully installed."));
+}

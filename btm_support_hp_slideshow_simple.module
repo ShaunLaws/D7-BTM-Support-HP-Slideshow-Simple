@@ -1,0 +1,37 @@
+<?php
+
+/**
+* Implements hook_help().
+*/
+function btm_support_hp_slideshow_simple_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#btm_support_hp_slideshow_simple':
+      // Return a line-break version of the module README.txt
+      $filters = filter_filter_info();
+      $func = $filters['filter_autop']['process callback'];
+      return call_user_func($func, file_get_contents( dirname(__FILE__) . "/README.txt") );
+  }
+}
+
+/**
+* Implements hook_init().
+*/
+function btm_support_hp_slideshow_simple_init() {
+
+  // Since this file should only be loaded on the front page, don't declared in the info file.
+  // Instead make it page-dependent here
+  if (drupal_is_front_page()) {
+
+    // Make sure the jQuery plugins module is enabled
+    if (module_exists('jquery_plugin')) {
+
+      // Use jquery_plugin_add here. It assumes you have the jQuery Cycle plug-in installed. That plug-in
+      // comes bundled with the jQuery Plugins module, but you could also just drop it into a
+      // /plugins or /sites/all/plugins folder and call it with the same method.
+      drupal_add_library('jquery_plugin', 'cycle');
+
+      // Add the actual call for our cycle slide show plug-in.
+      drupal_add_js(drupal_get_path('module', 'btm_support_hp_slideshow_simple') . '/js/btm_support_hp_slideshow_simple.js');
+    }
+  }
+}
