@@ -22,6 +22,11 @@ None.
 
   - Jquery Plugin - contains the cycle plugin that is used by this module
 
+* Download the module
+
+$ cd path/to/modules/contrib_local
+$ git clone git@github.com:ShaunLaws/D7-BTM-Support-HP-Slideshow-Simple.git
+
 * Download this dependent module to your site if it is not already installed
 
 * Install as usual, see http://drupal.org/node/70151 for further information.
